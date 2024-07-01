@@ -1,0 +1,139 @@
+// border-box 초기화
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box; // 모든 요소와 그 가상 요소의 박스 모델을 border-box로 설정합니다 (구형 웹킷 브라우저 지원).
+    -moz-box-sizing: border-box; // 모든 요소와 그 가상 요소의 박스 모델을 border-box로 설정합니다 (구형 모질라 브라우저 지원).
+    box-sizing: border-box; // 모든 요소와 그 가상 요소의 박스 모델을 border-box로 설정합니다. 패딩과 보더가 요소의 전체 너비와 높이에 포함됩니다.
+}
+
+// 공백 초기화
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul,
+figure,
+figcaption {
+    margin: 0; // 모든 요소의 기본 margin(외부 여백)을 제거합니다.
+    padding: 0; // 모든 요소의 기본 padding(내부 여백)을 제거합니다.
+}
+
+// 폰트 초기화 
+body,
+button,
+input,
+select,
+table,
+textarea {
+    font-family: var(--mainfont-nanum), var(--mainfont-nexon), "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", helvetica, sans-serif; 
+    // 모든 요소에 기본 폰트를 설정합니다. var() 함수는 CSS 변수 값을 사용합니다.
+}
+
+// 링크 초기화
+a,
+a:hover,
+a:focus {
+    color: inherit; // 링크의 기본 색상을 상속받도록 설정합니다.
+    text-decoration: none; // 링크의 기본 밑줄을 제거합니다.
+}
+
+// 스타일 초기화
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal; // 제목 요소의 기본 폰트 두께를 일반으로 설정합니다.
+}
+
+ul {
+    list-style: none; // 리스트 아이템의 기본 불릿 스타일을 제거합니다.
+}
+
+em,
+address {
+    font-style: normal; // 강조 및 주소 요소의 기본 기울임꼴 스타일을 제거합니다.
+}
+
+strong {
+    font-weight: normal; // 굵은 텍스트 요소의 기본 두께를 일반으로 설정합니다.
+}
+
+img {
+    vertical-align: top; // 이미지를 상단에 맞춥니다.
+    width: 100%; // 이미지를 부모 요소의 너비에 맞도록 설정합니다.
+}
+
+// 디자인 초기화
+input,
+textarea,
+button,
+select {
+    -webkit-appearance: none; // 요소의 기본 스타일을 제거합니다 (구형 웹킷 브라우저 지원).
+    -moz-appearance: none; // 요소의 기본 스타일을 제거합니다 (구형 모질라 브라우저 지원).
+    appearance: none; // 요소의 기본 스타일을 제거합니다.
+    border-radius: 0; // 기본 테두리 반경을 제거합니다.
+    font-size: 16px; // 기본 폰트 크기를 설정합니다.
+    border: 0; // 기본 테두리를 제거합니다.
+}
+
+// 스킵메뉴
+#skip a {
+    position: absolute; // 요소를 절대 위치로 설정합니다.
+    left: 10px; // 왼쪽에서 10px 떨어지도록 설정합니다.
+    top: -92px; // 위쪽에서 -92px 떨어지도록 설정합니다 (화면에서 숨김).
+    z-index: 100000; // 매우 높은 z-index를 설정하여 다른 요소 위에 위치하도록 합니다.
+    font-size: 1rem; // 폰트 크기를 설정합니다.
+    padding: 10px 30px; // 내부 여백을 설정합니다.
+    color: var(--white); // 글자 색상을 설정합니다.
+    background: var(--black); // 배경 색상을 설정합니다.
+}
+#skip a:focus,
+#skip a:active {
+    top: 10px; // 포커스 또는 활성 상태일 때 요소를 화면에 표시합니다.
+}
+
+// 글씨 숨기기
+.blind {
+    position: absolute; // 요소를 절대 위치로 설정합니다.
+    width: 1px; // 너비를 1px로 설정합니다.
+    height: 1px; // 높이를 1px로 설정합니다.
+    padding: 0; // 내부 여백을 제거합니다.
+    margin: -1px; // 외부 여백을 -1px로 설정합니다 (화면에서 숨김).
+    overflow: hidden; // 넘치는 내용을 숨깁니다.
+    clip: rect(0, 0, 0, 0); // 요소를 잘라내어 화면에 보이지 않게 합니다.
+    white-space: nowrap; // 줄 바꿈을 하지 않도록 설정합니다.
+    border: 0; // 테두리를 제거합니다.
+}
+
+// IR(Image Replacement)
+// 의미가 포함되어 있는 image를 배경으로 표현하고, 텍스트는 보이지 않게 설정하는 방법입니다.
+.ir {
+    display: block; // 요소를 블록 레벨로 설정합니다.
+    overflow: hidden; // 넘치는 내용을 숨깁니다.
+    font-size: 0; // 폰트 크기를 0으로 설정합니다.
+    line-height: 0; // 줄 높이를 0으로 설정합니다.
+    text-indent: -9999px; // 텍스트를 화면 밖으로 이동시킵니다.
+    white-space: nowrap; // 줄 바꿈을 하지 않도록 설정합니다.
+}
