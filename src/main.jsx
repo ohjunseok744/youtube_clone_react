@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import './assets/scss/style.scss'
+import './assets/scss/section/_layout.scss'
+
+import './assets/scss/section/_header.scss'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

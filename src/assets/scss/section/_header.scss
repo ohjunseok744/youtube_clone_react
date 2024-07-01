@@ -1,0 +1,137 @@
+.header__logo {
+  border-bottom: 1px solid var(--black100); /* --black100 변수를 사용해 border-bottom을 설정 */
+  
+  a {
+      display: flex; /* flexbox를 사용해 자식 요소들을 정렬 */
+      padding: 10px; /* 내부 여백을 10px로 설정 */
+      margin: 10px; /* 외부 여백을 10px로 설정 */
+
+      em {
+          width: 40px; /* 너비를 40px로 설정 */
+          height: 40px; /* 높이를 40px로 설정 */
+          display: block; /* 블록 요소로 설정 */
+          
+          background-color: var(--red); /* 배경색을 --red 변수로 설정 */
+          margin-right: 10px; /* 오른쪽 여백을 10px로 설정 */
+          animation: ani 20s 20s ease-in-out infinite; /* ani 애니메이션을 20초 동안 20초 지연 후 무한 반복 */
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMC4wMjYgMTcuOTg5TDE2LjczMSAxM2MuNTE0LS4zNDQuNTE0LTEuNjUgMC0yTDEwLjAyNiA2LjAxMWMtLjUzMy0uMzU3LTEuMjU2LjAyNi0xLjI1NiAxLjAwNFYxNmMwIC45NzguNzI0IDEuMzU3IDEuMjU2Ljk4OXoiLz48L3N2Zz4='); /* base64로 인코딩된 화살표 SVG */
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 80%; /* 이미지를 박스 크기의 50%로 설정 */
+          
+      }
+
+      span {
+          font-size: 20px; /* 글자 크기를 20px로 설정 */
+          line-height: 1; /* 줄 간격을 기본 설정 */
+          font-weight: 900; /* 글자 굵기를 900으로 설정 */
+          text-transform: uppercase; /* 모든 글자를 대문자로 변환 */
+      }
+  }
+}
+
+.header__menu {
+  padding: 10px 0; /* 위아래 여백을 10px로 설정 */
+
+  .menu {
+      border-bottom: 1px solid var(--black100); /* --black100 변수를 사용해 border-bottom을 설정 */
+
+      li {
+          margin-bottom: 5px; /* 아래쪽 여백을 5px로 설정 */
+
+          a {
+              font-size: 1rem; /* 글자 크기를 1rem으로 설정 */
+              display: block; /* 블록 요소로 설정 */
+              padding: 0.9rem 2rem 0.9rem 3.125rem; /* 상하 여백 0.9rem, 오른쪽 여백 2rem, 왼쪽 여백 3.125rem */
+              margin: 0 0.625rem; /* 좌우 여백을 0.625rem로 설정 */
+              border-radius: 40px; /* 테두리를 둥글게 40px로 설정 */
+              position: relative; /* 상대 위치 설정 */
+              line-height: 1; /* 줄 간격을 기본 설정 */
+              color: var(--white200); /* 글자 색을 --white200 변수로 설정 */
+              transition: all 0.3s; /* 모든 변화를 0.3초 동안 부드럽게 전환 */
+
+              svg {
+                  width: 1.25rem; /* 너비를 1.25rem로 설정 */
+                  height: 1.25rem; /* 높이를 1.25rem로 설정 */
+                  position: absolute; /* 절대 위치 설정 */
+                  left: 1.25rem; /* 왼쪽 여백을 1.25rem로 설정 */
+                  top: 0.75rem; /* 위쪽 여백을 0.75rem로 설정 */
+              }
+
+              &:hover {
+                  background-color: var(--black100); /* 배경색을 --black100 변수로 설정 */
+                  color: var(--white100); /* 글자 색을 --white 변수로 설정 */
+              }
+          }
+
+          &.active a {
+              background-color: var(--black100); /* 활성화된 항목의 배경색을 --black100 변수로 설정 */
+              color: var(--white); /* 활성화된 항목의 글자 색을 --white 변수로 설정 */
+          }
+      }
+  }
+
+  .keyword {
+      padding: 1.25rem; /* 내부 여백을 1.25rem로 설정 */
+
+      li {
+          display: inline-block; /* 인라인 블록 요소로 설정 */
+
+          a {
+              display: inline-block; /* 인라인 블록 요소로 설정 */
+              padding: 5px 15px; /* 상하 여백 5px, 좌우 여백 15px */
+              border: 1px solid var(--black200); /* --black200 변수를 사용해 테두리를 설정 */
+              font-size: 0.8rem; /* 글자 크기를 0.8rem으로 설정 */
+              border-radius: 40px; /* 테두리를 둥글게 40px로 설정 */
+              margin: 3px 1px; /* 위아래 여백 3px, 좌우 여백 1px */
+              transition: all 0.3s; /* 모든 변화를 0.3초 동안 부드럽게 전환 */
+
+              &:hover {
+                  background-color: var(--black100); /* 배경색을 --black100 변수로 설정 */
+                  color: var(--white); /* 글자 색을 --white 변수로 설정 */
+              }
+          }
+
+          &.active a {
+              background-color: var(--black100); /* 활성화된 항목의 배경색을 --black100 변수로 설정 */
+              color: var(--white); /* 활성화된 항목의 글자 색을 --white 변수로 설정 */
+          }
+      }
+  }
+}
+
+.header__sns {
+  position: fixed; /* 고정 위치 설정 */
+  bottom: 0; /* 하단에 고정 */
+  left: 0; /* 왼쪽에 고정 */
+  right: 0; /* 오른쪽에 고정 */
+  width: 260px; /* 너비를 260px로 설정 */
+  text-align: center; /* 텍스트를 가운데 정렬 */
+  padding: 15px 0 10px; /* 위쪽 여백 15px, 아래쪽 여백 10px */
+  background-color: var(--blackAlpha100); /* 배경색을 --blackAlpha100 변수로 설정 */
+  backdrop-filter: blur(10px); /* 배경을 10px 만큼 흐리게 설정 */
+
+  li {
+      display: inline-block; /* 인라인 블록 요소로 설정 */
+
+      a {
+          padding: 5px 7px; /* 상하 여백 5px, 좌우 여백 7px */
+          display: inline-block; /* 인라인 블록 요소로 설정 */
+      }
+  }
+}
+
+@keyframes ani {
+  0% {
+      transform: rotate(0) scale(1); /* 회전 0도, 크기 1배 */
+      border-radius: 10px; /* 테두리 반경 0 */
+  }
+  50% {
+      transform: rotate(720deg) scale(0.5); /* 회전 720도, 크기 0.5배 */
+      border-radius: 30px; /* 테두리 반경 20px */
+  }
+  100% {
+      transform: rotate(0) scale(1); /* 회전 0도, 크기 1배 */
+      border-radius: 10px; /* 테두리 반경 0 */
+  }
+}
