@@ -1,7 +1,14 @@
 import React from 'react'
+import Main from '../components/section/Main'
 
-export default function Not() {
-  return (
-    <div>Not</div>
-  )
+const Not = () => {
+    return (
+        <Main 
+            title = "잘못된 페이지"
+            description="접근이 잘못된 페이지입니다.">
+            Not
+        </Main>
+    )
 }
+
+export default Not;
