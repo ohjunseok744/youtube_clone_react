@@ -1,0 +1,86 @@
+.today__inner {
+  display: flex; /* Flexbox 레이아웃 사용 */
+  background-color: var(--black100); /* 배경색 설정 */
+  margin-bottom: 3.125rem; /* 아래쪽 여백 */
+}
+
+.today__thumb {
+  width: 40%; /* 썸네일 영역 너비 */
+}
+
+.today__text {
+  width: 60%; /* 텍스트 영역 너비 */
+  padding: 2rem; /* 내부 여백 */
+
+  .today {
+      background-color: #f00; /* 배경색 설정 */
+      padding: 2px 50px; /* 내부 여백 */
+      border-radius: 20px; /* 테두리 둥글게 */
+      text-transform: uppercase; /* 텍스트 대문자 변환 */
+      margin-bottom: 10px; /* 아래쪽 여백 */
+      display: inline-block; /* 인라인 블록 요소 */
+  }
+  .title {
+      font-size: 2rem; /* 글꼴 크기 */
+      margin-bottom: 1rem; /* 아래쪽 여백 */
+      @include line-one; /* mixin 포함 */
+  }
+  .desc {
+      margin-bottom: 1rem; /* 아래쪽 여백 */
+      color: var(--white200); /* 글꼴 색상 */
+      @include line(4); /* mixin 포함 */
+  }
+  .info {
+      .author {
+          font-size: 1rem; /* 글꼴 크기 */
+          margin-right: 10px; /* 오른쪽 여백 */
+          font-weight: 900; /* 글꼴 두께 */
+          text-decoration: underline; /* 밑줄 */
+          text-underline-position: under; /* 밑줄 위치 */
+          text-transform: uppercase; /* 텍스트 대문자 변환 */
+      }
+      .date {
+          font-style: 0.8rem; /* 글꼴 크기 */
+          color: var(--white200); /* 글꼴 색상 */
+      }
+  }
+}
+
+@media (max-width: 1700px) {
+  .today__inner {
+      .today__thumb {
+          width: 500px; /* 썸네일 너비 */
+      }
+      .today__text {
+          width: calc(100% - 500px); /* 텍스트 영역 너비 */
+          .desc {
+              @include line(2); /* mixin 포함 */
+          }
+      }
+  }
+}
+
+@media (max-width: 1200px) {
+  .today__inner {
+      flex-direction: column; /* Flexbox 방향 변경 */
+      .today__thumb {
+          width: 100%; /* 썸네일 너비 */
+      }
+      .today__text {
+          width: 100%; /* 텍스트 영역 너비 */
+          .title {
+              font-size: 24px; /* 글꼴 크기 */
+          }
+          .desc {
+              display: none; /* 설명 숨기기 */
+          }
+      }
+  }
+}
+
+@media (max-width: 800px) {
+  #todayPage,
+  #today {
+      margin-top: 80px; /* 위쪽 여백 */
+  }
+}
