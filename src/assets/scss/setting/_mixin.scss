@@ -22,3 +22,18 @@
   -webkit-line-clamp: $num;
   -webkit-box-orient: vertical;
 }
+
+// @media (max-width: 1200px) {
+//   .today__inner {
+//     flex-direction: column;
+//   }
+//   .today__thumb {
+//     width: 100%;
+//   }
+//   .today__text {
+//     width: 100%;
+//     .desc {
+//       @include line(2);
+//     }
+//   }
+// }

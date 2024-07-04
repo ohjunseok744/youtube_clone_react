@@ -1,8 +1,11 @@
 import React from 'react'
-
 const Developer = () => {
   return (
-    <div>Developer</div>
+    <div>
+      develope
+
+    </div>
+    
   )
 }
 

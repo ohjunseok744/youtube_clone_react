@@ -1,6 +1,8 @@
 .header__logo {
   border-bottom: 1px solid var(--black100); /* --black100 변수를 사용해 border-bottom을 설정 */
-  
+  @media (max-width: 800px){
+        border-bottom: 0;
+    }
   a {
       display: flex; /* flexbox를 사용해 자식 요소들을 정렬 */
       padding: 10px; /* 내부 여백을 10px로 설정 */
