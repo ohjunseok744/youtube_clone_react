@@ -1,13 +1,14 @@
 import React from 'react'
-import Main from '../components/section/Main'
+import { gsapText } from '../components/data/gsap'
+import VideoSection from '../components/section/VideoSection';
 
 const Gsap = () => {
     return (
-        <Main 
-            title = "GSAP 사이트"
-            description="GSAP 사이트 튜토리얼 강의입니다.">
-            Gsap
-        </Main>
+        <VideoSection 
+            title="웹디자인 기능사"
+            description="웹디자인 기능사 튜토리얼 강의입니다."
+            data={gsapText}
+        />
     )
 }
 

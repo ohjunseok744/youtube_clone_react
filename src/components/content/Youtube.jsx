@@ -1,8 +1,13 @@
 import React from 'react'
+import { youtubeText  } from '../data/youtube';
+import VideoSlider from './VideoSlider';
 
 const Youtube = () => {
   return (
-    <div>Youtube</div>
+    <VideoSlider 
+            title="😱 지금 이 코딩을 영상으로"
+            data={youtubeText}
+        />
   )
 }
 

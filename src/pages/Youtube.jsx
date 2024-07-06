@@ -1,13 +1,15 @@
 import React from 'react'
-import Main from '../components/section/Main'
+import VideoSection from '../components/section/VideoSection';
+
+import { youtubeText } from '../components/data/youtube'
 
 const Youtube = () => {
     return (
-        <Main 
-            title = "유튜브 사이트"
-            description="유튜브 사이트 튜토리얼 강의입니다.">
-            Youtube
-        </Main>
+        <VideoSection 
+            title="유튜브 클론 사이트"
+            description="😱 지금 이 코딩을 영상으로"
+            data={youtubeText}
+        />
     )
 }
 
