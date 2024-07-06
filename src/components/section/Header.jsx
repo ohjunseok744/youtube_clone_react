@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useLocation } from 'react-router-dom';
 import { CiBaseball } from "react-icons/ci";
 import { CiCoins1 } from "react-icons/ci";
 import { CiBoxes } from "react-icons/ci";
@@ -15,6 +15,8 @@ import { AiFillYoutube } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 
 const Header = () => {
+    const location = useLocation();
+    const { pathname } = location;
     return (
         <header id='header' role='banner'>
             <h1 className='header__logo'>
@@ -26,42 +28,42 @@ const Header = () => {
 
             <nav className='header__menu'>
                 <ul className='menu'>
-                    <li className='active'>
+                    <li className={pathname === '/' ? 'active' : ''}>
                         <a href='/'>
                             <CiBaseball /> 웹스토리보이
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/today' ? 'active' : ''}>
                         <a href='/today'>
                             <CiMoneyBill /> 추천 영상
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/developer' ? 'active' : ''}>
                         <a href='/developer'>
                             <CiCoins1 /> 추천 개발자
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/webd' ? 'active' : ''}>
                         <a href='/webd'>
                             <CiBoxes /> 웹디자인기능사
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/website' ? 'active' : ''}>
                         <a href='/website'>
                             <CiBullhorn /> 웹표준 사이트
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/gsap' ? 'active' : ''}>
                         <a href='/gsap'>
                             <CiCoffeeCup /> GSAP Parallax
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/port' ? 'active' : ''}>
                         <a href='/port'>
                             <CiDumbbell /> 포트폴리오 사이트
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/youtube' ? 'active' : ''}>
                         <a href='/youtube'>
                             <CiFries /> 유튜브 클론 사이트
                         </a>
