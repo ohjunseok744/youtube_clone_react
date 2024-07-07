@@ -1,0 +1,32 @@
+/* 비활성화된 내비게이션 버튼이 보이도록 스타일을 수정합니다. */
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+    opacity: 0 !important; /* 비활성화된 내비게이션 버튼을 반투명하게 표시합니다. */
+    pointer-events: none !important; /* 비활성화된 내비게이션 버튼의 클릭 이벤트를 비활성화합니다. */
+}
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    color: #fff !important; /* 내비게이션 버튼의 색상을 설정합니다. */
+    font-size: 30px !important; /* 내비게이션 버튼의 폰트 크기를 설정합니다. */
+}
+.swiper-pagination-bullet {
+    background-color: #fff !important; /* 페이지네이션 불릿의 색상을 설정합니다. */
+}
+.swiper-button-next {
+    background-color: #00000069; /* 다음 버튼의 배경색을 설정합니다. */
+    right: 0 !important; /* 다음 버튼을 오른쪽에 위치시킵니다. */
+    top: 50% !important; /* 다음 버튼을 수직으로 50% 위치시킵니다. */
+    transform: translateY(-50%); /* 중앙에 위치하도록 변환합니다. */
+}
+.swiper-button-prev {
+    background-color: #00000069; /* 이전 버튼의 배경색을 설정합니다. */
+    left: 0 !important; /* 이전 버튼을 왼쪽에 위치시킵니다. */
+    top: 50% !important; /* 이전 버튼을 수직으로 50% 위치시킵니다. */
+    transform: translateY(-50%); /* 중앙에 위치하도록 변환합니다. */
+}
+.video__slider .swiper-button-next {
+    top: 50% !important; /* 비디오 슬라이더에서 다음 버튼의 위치를 조정합니다. */
+}
+.video__slider .swiper-button-prev {
+    top: 50% !important; /* 비디오 슬라이더에서 이전 버튼의 위치를 조정합니다. */
+}
