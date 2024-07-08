@@ -6,21 +6,47 @@ import { fetchFromAPI } from '../utils/api'
 const Search = () => {
     const { searchId } = useParams();
     const [ videos, setVideos ] = useState([]);
-    
+    const [ nextPageToken, setNextPageToken ] = useState(null);
+    const [ loading, setLoading ] = useState(true);
     useEffect(() => {
-        fetchFromAPI(`search?part=snippet&q=${searchId}`)
-            .then((data) => setVideos(data.items))
-            .catch((error) => console.error('Error fetching data:', error));
+        setVideos([]);
+        fetchVideos(searchId);
+        setLoading(true);
     }, [searchId]);
 
+    const fetchVideos = (query, pageToken = '') => {
+        fetchFromAPI(`search?part=snippet&q=${query}&pageToken=${pageToken}`)
+            .then((data) => {
+                setNextPageToken(data.nextPageToken);
+                setVideos((prevVideos) => [...prevVideos, ...data.items]);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    };
+
+    const handleLoadMore = () => {
+        if (nextPageToken) {
+            fetchVideos(searchId, nextPageToken);
+        }
+    };
+    const searchPageClass = loading ? 'isLoading' : 'isLoaded'
+    
     return (
         <Main 
             title = "유투브 검색"
             description="유튜브 검색 결과 페이지입니다.">
             
-            <section id='searchPage'>
+            <section id='searchPage' className={searchPageClass}>
+                <h2>🤠 <em>{searchId}</em> 검색 결과입니다.</h2>
                 <div className="video__inner search">
                     <VideoSearch videos={videos} />
+                </div>
+                <div className="video__more">
+                    {nextPageToken && (
+                        <button className="w-btn w-btn-indigo"onClick={handleLoadMore}>더 보기</button>
+                    )}
                 </div>
             </section>
         </Main>

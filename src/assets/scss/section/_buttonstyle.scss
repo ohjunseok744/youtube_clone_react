@@ -1,0 +1,22 @@
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: var(--black100);
+    color: white;
+}
+
+
+.w-btn:active {
+    transform: scale(1.5);
+}
+.w-btn:hover{
+    cursor: pointer;
+    background-color: rgba(43, 42, 42, 0.5);
+}
