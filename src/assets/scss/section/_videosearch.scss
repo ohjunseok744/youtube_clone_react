@@ -33,6 +33,12 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                filter: brightness(0.5); /* Initial brightness set to 50% */
+                transition: filter 0.3s; /* Smooth transition effect */
+                
+                &:hover {
+                    filter: brightness(1); /* Brightness set to 100% on hover */
+                }
             }
         }
 
@@ -56,13 +62,14 @@
                 align-items: flex-end;
 
                 .author {
-                    display: block;
+                    margin-top: 10px;
+                    display: inline;
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     color: #666;
                     transition: all 0.3s;
-
+                    background-color: transparent;
                     &:hover {
                         color: #fff;
                     }

@@ -1,0 +1,89 @@
+.channel__header {
+  position: relative;
+  height: 300px; /* Adjust as necessary */
+  background-size: cover;
+  background-position: center;
+  background-color: #969696;
+}
+
+.channel__header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as necessary */
+  z-index: 1;
+}
+
+#channel {
+  padding: 0px 40px;
+}
+
+.circle {
+  z-index: 100;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Adjust as necessary */
+  height: 200px; /* Adjust as necessary */
+  border-radius: 50%;
+  overflow: hidden;
+  background: white; /* Or any other background color */
+  position: absolute;
+  bottom: -75px; /* Half of the circle's height to make it stick out */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle img {
+  width: 100%;
+  height: auto;
+}
+
+
+.channel__info {
+  text-align: center;
+  padding-top: 80px; /* Adjust as necessary */
+}
+
+.channel__info .title {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.channel__info .desc {
+  padding: 150px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+.channel__info .info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.channel__info .info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: hsla(0, 0%, 65%, .192);
+  border-radius: 40px;
+  margin: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
