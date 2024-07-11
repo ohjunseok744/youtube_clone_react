@@ -1,30 +1,34 @@
-import React from 'react'
-
-import { CiBaseball } from "react-icons/ci";
-import { CiCoins1 } from "react-icons/ci";
-import { CiBoxes } from "react-icons/ci";
-import { CiBullhorn } from "react-icons/ci";
-import { CiCoffeeCup } from "react-icons/ci";
-import { CiDumbbell } from "react-icons/ci";
-import { CiFries } from "react-icons/ci";
-import { CiMoneyBill } from "react-icons/ci";
-
-import { AiFillGithub } from "react-icons/ai";
-import { AiOutlineCodepen } from "react-icons/ai";
-import { AiFillYoutube } from "react-icons/ai";
-import { AiOutlineInstagram } from "react-icons/ai";
+import React, { useState } from 'react';
+import { CiBaseball, CiCoins1, CiBoxes, CiBullhorn, CiCoffeeCup, CiDumbbell, CiFries, CiMoneyBill } from "react-icons/ci";
+import { AiFillGithub, AiOutlineCodepen, AiFillYoutube, AiOutlineInstagram } from "react-icons/ai";
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
+    // 메뉴의 열림/닫힘 상태를 관리하는 상태 변수와 이를 변경하는 함수
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // 메뉴 열림/닫힘 상태를 토글하는 함수
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
         <header id='header' role='banner'>
+            {/* 로고 섹션 */}
             <h1 className='header__logo'>
                 <a href='/'>
                     <em aria-hidden='true'></em>
                     <span>webs<br />youtube</span>
                 </a>
+                <div className='header__burger' onClick={toggleMenu}>
+                    {menuOpen ? <FaTimes /> : <FaBars />}
+                </div>
             </h1>
 
-            <nav className='header__menu'>
+            
+
+            {/* 메뉴 네비게이션, 'open' 클래스에 따라 보임/숨김 조절 */}
+            <nav className={`header__menu ${menuOpen ? 'open' : ''}`}>
                 <ul className='menu'>
                     <li className='active'>
                         <a href='/'>
@@ -103,7 +107,8 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            
+
+            {/* SNS 링크 섹션 */}
             <div className='header__sns'>
                 <ul>
                     <li>
@@ -129,7 +134,7 @@ const Header = () => {
                 </ul>
             </div>
         </header>
-    )
+    );
 }
 
 export default Header;

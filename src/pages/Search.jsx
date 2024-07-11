@@ -17,7 +17,7 @@ const Search = () => {
     }, [searchId]);
 
     const fetchVideos = (query, pageToken = '') => {
-        fetchFromAPI(`search?part=snippet&q=${query}&pageToken=${pageToken}`)
+        fetchFromAPI(`search?part=snippet&type=video&q=${query}&pageToken=${pageToken}`)
             .then((data) => {
                 setNextPageToken(data.nextPageToken); // 다음 페이지 토큰을 상태에 저장합니다.
                 setVideos((prevVideos) => [...prevVideos, ...data.items.slice(0, 16)]); // 기존 비디오 목록에 새 비디오를 추가합니다.
