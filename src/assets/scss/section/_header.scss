@@ -136,7 +136,9 @@
       border-radius: 10px; /* 테두리 반경 10px */
     }
   }
-  
+  .header__burger {
+    display: none; /* 기본적으로 햄버거 메뉴 숨기기 */
+    }
   /* 모바일 스타일 */
   @media (max-width: 800px) {
     .header__menu {
@@ -149,20 +151,20 @@
   
     .header__burger {
       display: block; /* 햄버거 메뉴 표시 */
+      
       cursor: pointer; /* 커서 모양 변경 */
       padding: 10px; /* 내부 여백 설정 */
       background-color: var(--black100); /* 배경색 설정 */
       border-radius: 5px; /* 테두리 반경 설정 */
       position: absolute; /* 절대 위치 설정 */
-      right: 10px; /* 오른쪽 여백 설정 */
-      top: 10px; /* 위쪽 여백 설정 */
+      right: -40px; /* 오른쪽 여백 설정 */
+      top: 12px; /* 위쪽 여백 설정 */
+      
     }
   
     .header__sns {
       display: none; /* 모바일 환경에서 SNS 아이콘 숨기기 */
     }
+    
   }
   
-.header__burger {
-display: none; /* 기본적으로 햄버거 메뉴 숨기기 */
-}
