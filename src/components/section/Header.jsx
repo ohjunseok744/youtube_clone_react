@@ -1,71 +1,69 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { CiBaseball, CiCoins1, CiBoxes, CiBullhorn, CiCoffeeCup, CiDumbbell, CiFries, CiMoneyBill } from "react-icons/ci";
 import { AiFillGithub, AiOutlineCodepen, AiFillYoutube, AiOutlineInstagram } from "react-icons/ai";
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
-    // 메뉴의 열림/닫힘 상태를 관리하는 상태 변수와 이를 변경하는 함수
+    const location = useLocation();
+    const { pathname } = location;
     const [menuOpen, setMenuOpen] = useState(false);
 
-    // 메뉴 열림/닫힘 상태를 토글하는 함수
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
     return (
-        <header id='header' role='banner'>
-            {/* 로고 섹션 */}
+        <header id='header' role='banner' className={`${menuOpen ? 'open' : ''}`}>
             <h1 className='header__logo'>
                 <a href='/'>
                     <em aria-hidden='true'></em>
-                    <span>webs<br />youtube</span>
+                    <span>junstone<br />youtube</span>
                 </a>
-                <div className='header__burger' onClick={toggleMenu}>
-                    {menuOpen ? <FaTimes /> : <FaBars />}
-                </div>
             </h1>
 
-            
+            <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
 
-            {/* 메뉴 네비게이션, 'open' 클래스에 따라 보임/숨김 조절 */}
             <nav className={`header__menu ${menuOpen ? 'open' : ''}`}>
                 <ul className='menu'>
-                    <li className='active'>
+                    <li className={pathname === '/' ? 'active' : ''}>
                         <a href='/'>
                             <CiBaseball /> 웹스토리보이
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/today' ? 'active' : ''}>
                         <a href='/today'>
                             <CiMoneyBill /> 추천 영상
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/developer' ? 'active' : ''}>
                         <a href='/developer'>
                             <CiCoins1 /> 추천 개발자
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/webd' ? 'active' : ''}>
                         <a href='/webd'>
                             <CiBoxes /> 웹디자인기능사
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/website' ? 'active' : ''}>
                         <a href='/website'>
                             <CiBullhorn /> 웹표준 사이트
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/gsap' ? 'active' : ''}>
                         <a href='/gsap'>
                             <CiCoffeeCup /> GSAP Parallax
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/port' ? 'active' : ''}>
                         <a href='/port'>
                             <CiDumbbell /> 포트폴리오 사이트
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/youtube' ? 'active' : ''}>
                         <a href='/youtube'>
                             <CiFries /> 유튜브 클론 사이트
                         </a>
@@ -107,8 +105,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-
-            {/* SNS 링크 섹션 */}
+            
             <div className='header__sns'>
                 <ul>
                     <li>
@@ -118,7 +115,8 @@ const Header = () => {
                     </li>
                     <li>
                         <a href='https://www.youtube.com/webstoryboy' rel='noopener noreferrer'>
-                        <AiFillYoutube /> </a>
+                            <AiFillYoutube />
+                        </a>
                     </li>
                     <li>
                         <a href='https://codepen.io/webstoryboy' rel='noopener noreferrer'>
@@ -133,7 +131,7 @@ const Header = () => {
                 </ul>
             </div>
         </header>
-    );
+    )
 }
 
 export default Header;
