@@ -3,13 +3,15 @@ import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import Header from './Header'
 import Footer from './Footer'
-import Search from './Search'  // 추가
+import Search from './Search' 
+import ScrollTo from '../../utils/scrollTO'
 
 const Main = ( props ) => {
     return (
         <HelmetProvider>
+            <ScrollTo />
             <Helmet 
-                titleTemplate="%s | Webs Youtube" 
+                titleTemplate="%s | JUNSEOK Youtube" 
                 defaultTitle="Webs Youtube" 
                 defer={false}
             >

@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Main from '../components/section/Main'
 import { developerText } from '../components/data/developer'; // 외부 파일에서 개발자 데이터를 임포트합니다.
 import { Link } from 'react-router-dom'; // react-router-dom에서 Link 컴포넌트를 임포트하여 라우팅을 처리합니다.
 
 const Developer = () => {
+    const [loading, setLoading] = useState(true); 
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 300);
+    }, []);
+    const developePageClass = loading ? 'isLoading' : 'isLoaded';
+    
     return (
         <Main 
             title = "추천 개발자"
             description="오늘의 추천 개발자 유튜버입니다.">
-            <section id='developer'> {/* 섹션 요소에 id를 부여하여 스타일링이나 스크롤링에 활용할 수 있습니다. */}
+            <section id='developer' className={developePageClass}> {/* 섹션 요소에 id를 부여하여 스타일링이나 스크롤링에 활용할 수 있습니다. */}
                 <h2>😪 추천 개발자를 소개합니다.</h2> {/* 섹션의 제목을 표시합니다. */}
                 <div className="developer__inner"> {/* 개발자 목록을 감싸는 컨테이너입니다. overflow 클래스로 스타일링을 적용할 수 있습니다. */}
                     {developerText.map((developer, key) => ( // developerText 배열을 순회하며 각 개발자에 대한 정보를 렌더링합니다.

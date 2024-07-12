@@ -1,10 +1,19 @@
-import React from 'react' // React 라이브러리를 가져옵니다.
+import React, { useEffect, useState } from 'react'
 import Main from '../components/section/Main' // Main 컴포넌트를 가져옵니다.
 
 import { todayText } from '../components/data/Today' // 'todayText' 데이터를 가져옵니다.
 import { Link } from 'react-router-dom' // React Router의 'Link' 컴포넌트를 가져옵니다.
 
 const Today = () => {
+    const [loading, setLoading] = useState(true); 
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 300);
+    }, []);
+
+    const todayPageClass = loading ? 'isLoading' : 'isLoaded';
     return (
         // Main 컴포넌트로 래핑하여 페이지 타이틀과 설명을 설정합니다.
         <Main 
@@ -12,7 +21,7 @@ const Today = () => {
             description="오늘의 추천 유튜브 영상입니다."
         >
             {/* 오늘의 추천 영상 섹션 */}
-            <section id='todayPage'>
+            <section id='todayPage' className={todayPageClass}>
                 <h2>🥰 오늘의 추천 영상입니다.</h2>
 
                 {/* todayText 배열을 map 함수로 반복하여 각 추천 영상을 렌더링합니다. */}

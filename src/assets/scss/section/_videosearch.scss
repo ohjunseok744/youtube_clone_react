@@ -1,0 +1,85 @@
+.video__inner.search {
+    min-height: 100vh;
+    
+    .video {
+        margin-bottom: 40px;
+        border-radius: 10px;
+        background-color: #111;
+        overflow: hidden; /* Ensure the content doesn't overflow the container */
+
+        @media (max-width: 600px) {
+            margin-bottom: 10px;
+        }
+
+        .video__thumb {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+
+            /* Ensure Link elements take up the full space and style them correctly */
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensure the image covers the entire container */
+                position: absolute;
+                top: 0;
+                left: 0;
+                filter: brightness(0.5); /* Initial brightness set to 50% */
+                transition: filter 0.3s; /* Smooth transition effect */
+                
+                &:hover {
+                    filter: brightness(1); /* Brightness set to 100% on hover */
+                }
+            }
+        }
+
+        .video__info {
+            padding: 10px 15px;
+            color: #fff;
+            height: 100%;
+            .title {
+                font-size: 1rem;
+                line-height: 1.2; /* Adjust line-height for better readability */
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .author {
+                    margin-top: 10px;
+                    display: inline;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: #666;
+                    transition: all 0.3s;
+                    background-color: transparent;
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+
+                .date {
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+    }
+}

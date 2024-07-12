@@ -1,67 +1,69 @@
-import React from 'react'
-
-import { CiBaseball } from "react-icons/ci";
-import { CiCoins1 } from "react-icons/ci";
-import { CiBoxes } from "react-icons/ci";
-import { CiBullhorn } from "react-icons/ci";
-import { CiCoffeeCup } from "react-icons/ci";
-import { CiDumbbell } from "react-icons/ci";
-import { CiFries } from "react-icons/ci";
-import { CiMoneyBill } from "react-icons/ci";
-
-import { AiFillGithub } from "react-icons/ai";
-import { AiOutlineCodepen } from "react-icons/ai";
-import { AiFillYoutube } from "react-icons/ai";
-import { AiOutlineInstagram } from "react-icons/ai";
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { CiBaseball, CiCoins1, CiBoxes, CiBullhorn, CiCoffeeCup, CiDumbbell, CiFries, CiMoneyBill } from "react-icons/ci";
+import { AiFillGithub, AiOutlineCodepen, AiFillYoutube, AiOutlineInstagram } from "react-icons/ai";
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
+    const location = useLocation();
+    const { pathname } = location;
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
-        <header id='header' role='banner'>
+        <header id='header' role='banner' className={`${menuOpen ? 'open' : ''}`}>
             <h1 className='header__logo'>
                 <a href='/'>
                     <em aria-hidden='true'></em>
-                    <span>webs<br />youtube</span>
+                    <span>junstone<br />youtube</span>
                 </a>
             </h1>
 
-            <nav className='header__menu'>
+            <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+
+            <nav className={`header__menu ${menuOpen ? 'open' : ''}`}>
                 <ul className='menu'>
-                    <li className='active'>
+                    <li className={pathname === '/' ? 'active' : ''}>
                         <a href='/'>
                             <CiBaseball /> 웹스토리보이
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/today' ? 'active' : ''}>
                         <a href='/today'>
                             <CiMoneyBill /> 추천 영상
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/developer' ? 'active' : ''}>
                         <a href='/developer'>
                             <CiCoins1 /> 추천 개발자
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/webd' ? 'active' : ''}>
                         <a href='/webd'>
                             <CiBoxes /> 웹디자인기능사
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/website' ? 'active' : ''}>
                         <a href='/website'>
                             <CiBullhorn /> 웹표준 사이트
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/gsap' ? 'active' : ''}>
                         <a href='/gsap'>
                             <CiCoffeeCup /> GSAP Parallax
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/port' ? 'active' : ''}>
                         <a href='/port'>
                             <CiDumbbell /> 포트폴리오 사이트
                         </a>
                     </li>
-                    <li>
+                    <li className={pathname === '/youtube' ? 'active' : ''}>
                         <a href='/youtube'>
                             <CiFries /> 유튜브 클론 사이트
                         </a>

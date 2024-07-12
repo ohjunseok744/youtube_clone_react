@@ -1,51 +1,71 @@
 .developer__inner {
-    display: flex; /* 자식 요소들을 플렉스 박스로 배치합니다. */
-    flex-wrap: wrap; /* 자식 요소들이 컨테이너를 벗어나면 줄 바꿈을 합니다. */
+    display: flex;
+    flex-wrap: wrap;
 
-    &.overflow { /* overflow 클래스를 가진 요소에 대한 스타일을 정의합니다. */
-        width: 100%; /* 너비를 100%로 설정합니다. */
-        height: 200px; /* 높이를 200px로 설정합니다. */
-        overflow: hidden; /* 넘치는 콘텐츠를 숨깁니다. */
+    &.overflow {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
     }
 
-    .developer { /* .developer 클래스에 대한 스타일을 정의합니다. */
-        margin-right: 20px; /* 오른쪽 마진을 20px로 설정합니다. */
+    .developer {
+        margin-right: 20px;
 
-        .developer__img { /* .developer__img 클래스에 대한 스타일을 정의합니다. */
-            width: 150px; /* 너비를 150px로 설정합니다. */
-            height: 150px; /* 높이를 150px로 설정합니다. */
-            border-radius: 50%; /* 둥근 모서리를 만들어 원형으로 보이게 합니다. */
-            overflow: hidden; /* 이미지가 컨테이너를 넘으면 숨깁니다. */
-            margin-bottom: 10px; /* 아래쪽 마진을 10px로 설정합니다. */
+        .developer__img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 10px;
         }
-        .developer__info { /* .developer__info 클래스에 대한 스타일을 정의합니다. */
-            width: 150px; /* 너비를 150px로 설정합니다. */
-            text-align: center; /* 텍스트를 가운데 정렬합니다. */
-            @include line-one; /* (Sass 믹스인) line-one 믹스인을 포함합니다. */
-            padding-bottom: 40px; /* 아래쪽 패딩을 40px로 설정합니다. */
+        .developer__info {
+            width: 150px;
+            text-align: center;
+            /* @include line-one; */
+            padding-bottom: 40px;
         }
     }
 }
 
-@media (max-width: 1200px) { /* 화면 너비가 1200px 이하일 때 적용되는 스타일입니다. */
+#developerPage {
     .developer__inner {
-        justify-content: center; /* 자식 요소들을 가운데 정렬합니다. */
-
         .developer {
-            margin-right: 0; /* 오른쪽 마진을 0으로 설정합니다. */
-            
-            .developer__img {
-                width: 130px; /* 너비를 130px로 설정합니다. */
-                height: 130px; /* 높이를 130px로 설정합니다. */
-                margin: 10px auto; /* 위아래 마진을 10px로, 좌우 마진을 auto로 설정하여 가운데 정렬합니다. */
-            }
-            .developer__info {}
-        }   
+            margin-right: 20px;
+        }
+        .developer__img {
+            width: 150px;
+            height: 150px;
+        }
+        .developer__info {
+            width: 150px;
+            padding-bottom: 40px;
+        }
     }
 }
 
-@media (max-width: 800px) { /* 화면 너비가 800px 이하일 때 적용되는 스타일입니다. */
-    .developer__inner {
-        margin-top: 70px; /* 위쪽 마진을 70px로 설정합니다. */
+@media (max-width: 1200px){
+    #developerPage {
+        .developer__inner {
+            justify-content: center;
+    
+            .developer {
+                margin-right: 0;
+                
+                .developer__img {
+                    width: 130px;
+                    height: 130px;
+                    margin: 10px auto;
+                }
+            }   
+        }
     }
 }
+
+@media (max-width: 800px){
+    #developerPage {
+        .developer__inner {
+            margin-top: 70px;
+        }
+    }
+}
+;
